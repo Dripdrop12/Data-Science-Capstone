@@ -23,8 +23,8 @@ en_us_news <- readLines("Coursera-SwiftKey/final/en_US/en_US.news.txt")
 ```
 # Sample
 ```{r}
-# Random sample with 5% of the data #
-news <- en_us_news[as.logical(rbinom(length(en_us_news),1,.05))]
-blogs <- en_us_blogs[as.logical(rbinom(length(en_us_blogs),1,.05))]
-twitter <- en_us_twitter[as.logical(rbinom(length(en_us_twitter),1,.05))]
+# Random sample of the data #
+news <- en_us_news[as.logical(rbinom(n = length(en_us_news), size = 1, prob = .15))]
+blogs <- en_us_blogs[as.logical(rbinom(n = length(en_us_blogs), size = 1, prob = .05))]
+twitter <- en_us_twitter[as.logical(rbinom(n = length(en_us_twitter), size = 1, prob = .05))]
 ```
