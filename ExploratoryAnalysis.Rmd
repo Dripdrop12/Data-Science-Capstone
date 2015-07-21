@@ -1,0 +1,30 @@
+---
+title: "Data Science Capstone - Exploratory Analysis"
+author: "Jonathan Hill"
+date: "July 21, 2015"
+output: html_document
+
+---
+
+```{r, echo=FALSE, results = 'hide'}
+# Set the working directory #
+setwd("~/GitHub/Data-Science-Capstone")
+
+# Load required packages into memory #
+library(dplyr)
+library(data.table)
+library(stringr)
+library(tm)
+
+# Upload the data using readLines #
+en_us_twitter <- readLines("Coursera-SwiftKey/final/en_US/en_US.twitter.txt")
+en_us_blogs <- readLines("Coursera-SwiftKey/final/en_US/en_US.blogs.txt")
+en_us_news <- readLines("Coursera-SwiftKey/final/en_US/en_US.news.txt")
+```
+# Sample
+```{r}
+# Random sample with 5% of the data #
+news <- en_us_news[as.logical(rbinom(length(en_us_news),1,.05))]
+blogs <- en_us_blogs[as.logical(rbinom(length(en_us_blogs),1,.05))]
+twitter <- en_us_twitter[as.logical(rbinom(length(en_us_twitter),1,.05))]
+```
